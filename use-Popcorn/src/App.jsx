@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import StarRating from "./StarRating";
 import {useMovies} from './useMovies';
@@ -96,7 +97,7 @@ function Logo(){
   return(
     <div className="logo">
         <span role="img">🍿</span>
-        <h1>usePopcorn</h1>
+        <h1>Movies Mania</h1>
     </div>
   )
 }
