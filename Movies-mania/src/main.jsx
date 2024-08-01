@@ -1,21 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import StarRating from './StarRating'
 
-// function Test(){
-//   const [movieRating,setMovieRating] = useState(0);
-//   return <div>
-//     <StarRating color='blue' maxRating={10} onSetRating={setMovieRating}/>
-//      {movieRating}
-//     </div>
-// }
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
-    {/* <StarRating maxRating={5} messages={["Terrible","Okay","Good","Excellent","Brilliant"]}/>
-    <StarRating size={20} color='red' className="test" defaultRating={3}/>
-    <Test/> */}
   </React.StrictMode>,
 )

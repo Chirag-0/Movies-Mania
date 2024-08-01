@@ -13,7 +13,7 @@ function App() {
  
   const [query, setQuery] = useState("");
   const [selectedID,setSelectedID] = useState(null);
-  const tempQuery = "interstellar";
+  // const tempQuery = "interstellar";
   const [watched,setWatched] = useLocalStorageState([],'watched');
 
   /*
@@ -179,30 +179,6 @@ function Movie({movie,onSelectMovie}){
   )
 }
 
-/*
-function WatchedBox(){
-  const [watched, setWatched] = useState(tempWatchedData);
-  const [isOpen2, setIsOpen2] = useState(true);
-
-  return(
-    <div className="box">
-    <button
-      className="btn-toggle"
-      onClick={() => setIsOpen2((open) => !open)}
-    >
-      {isOpen2 ? "–" : "+"}
-    </button>
-    {isOpen2 && (
-      <>
-       <WatchedSummary watched={watched}/>
-       <WatchedMovieList watched={watched}/> 
-      </>
-    )}
-  </div>
-  )
-}
-*/
-
 function WatchedSummary({watched}){
   const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
   const avgUserRating = average(watched.map((movie) => movie.userRating));
@@ -284,12 +260,6 @@ function MovieDetails({selectedID,onCloseMovie,onAddWatched,watched}){
 
   useKey('Escape',onCloseMovie);
  
-  // if(imdbRating > 8) [top,isTop] = useState(true); Wrong way violating the rules of react hooks
-  // if(imdbRating > 8 ) return <p>hello</p> Wrong way violating the rules of react hooks 
-  // const [top,isTop] = useState(imdbRating > 8);
-  // console.log(top);
-  // const isTop = imdbRating > 8;
-  // console.log(isTop); 
 
   function handleAdd(){
     const newWatchedMovie = {
