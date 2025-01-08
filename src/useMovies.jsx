@@ -17,7 +17,7 @@ export function useMovies(query){
               `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
               {signal:controller.signal}
             );
-    
+           
             if(!res.ok) {
               throw new Error("Something went wrong with fetching movies");
             } 
@@ -30,9 +30,10 @@ export function useMovies(query){
             setMovies(data.Search);
             setError('');
           } catch(err){
-            if(err.message !== "AbortError"){
-              setError(err.message);
+            if(err.name === "AbortError"){
+              return;
             }
+            setError(err.message);
           } finally{
             setIsLoading(false);
           }
