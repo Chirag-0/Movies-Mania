@@ -339,6 +339,39 @@ body {
   justify-content: center;
 }
 
+@media only screen and (max-width: 600px){
+  .main {
+    width: 190vw;
+    margin-top: 13rem;
+    height: auto;
+    /* height: calc(100vh - 7.2rem - 3 * 2.4rem); */
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+    width: 140%;
+    height: 55rem;
+    position: relative;
+  }
+  .nav-bar {
+    width: 150%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10rem;
+  }
+
+  .search {
+    width: 80%;
+  }
+}
+
+
 /*
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
