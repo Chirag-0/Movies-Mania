@@ -11,6 +11,7 @@ export function useMovies(query){
         const controller = new AbortController();
         async function fetchMovies(){
          try { 
+          const startTime = performance.now();
             setIsLoading(true);
             setError('');
             const res = await fetch(
@@ -28,6 +29,8 @@ export function useMovies(query){
             }
             
             setMovies(data.Search);
+            const endTime = performance.now(); // End timing
+                console.log(`API Call and State Update Time: ${endTime - startTime}ms`);
             setError('');
           } catch(err){
             if(err.name === "AbortError"){
